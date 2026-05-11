@@ -12,6 +12,7 @@ import StatCard from '../components/StatCard'
 import { routePlans } from '../data/routes'
 import { redTourismSites } from '../data/sites'
 import { surveyMetrics } from '../data/survey'
+import EvaluationSection from './EvaluationSection'
 import MapSection from './MapSection'
 
 function HomeSection() {
@@ -125,23 +126,7 @@ function HomeSection() {
         </div>
       </section>
 
-      <section className="content-section split-section" id="evaluation-plan">
-        <div>
-          <SectionTitle
-            eyebrow="评价框架"
-            title="后续图表模块的指标方向"
-            description="下一阶段可将保护开发评价与满意度仪表盘拆分为独立组件。"
-          />
-        </div>
-        <div className="method-list">
-          <span>文物保护</span>
-          <span>基础设施</span>
-          <span>交通可达</span>
-          <span>数字展示</span>
-          <span>研学服务</span>
-          <span>公众参与</span>
-        </div>
-      </section>
+      <EvaluationSection />
 
       <section className="content-section" id="route-plan">
         <SectionTitle
