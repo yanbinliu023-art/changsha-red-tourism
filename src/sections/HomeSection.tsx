@@ -12,6 +12,7 @@ import StatCard from '../components/StatCard'
 import { routePlans } from '../data/routes'
 import { redTourismSites } from '../data/sites'
 import { surveyMetrics } from '../data/survey'
+import MapSection from './MapSection'
 
 function HomeSection() {
   const previewSites = redTourismSites.slice(0, 3)
@@ -34,7 +35,7 @@ function HomeSection() {
             建立一个面向课程汇报的可视化研究网站。
           </p>
           <div className="hero-actions">
-            <a href="#sites-preview">查看资源预览</a>
+            <a href="#resource-map">查看资源地图</a>
             <a href="#research-goals">了解调研目标</a>
           </div>
         </div>
@@ -108,6 +109,8 @@ function HomeSection() {
         </div>
         <DataNotice detail="首页、资源卡片、路线与满意度指标目前全部为静态演示内容，后续可替换为真实问卷和实地调研结果。" />
       </section>
+
+      <MapSection />
 
       <section className="content-section" id="sites-preview">
         <SectionTitle

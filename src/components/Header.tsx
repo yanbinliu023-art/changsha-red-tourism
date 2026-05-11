@@ -2,6 +2,7 @@ import { BookOpen, MapPin, Route, ShieldCheck } from 'lucide-react'
 
 const navItems = [
   { href: '#home', label: '首页', icon: BookOpen },
+  { href: '#resource-map', label: '资源地图', icon: MapPin },
   { href: '#sites-preview', label: '资源预览', icon: MapPin },
   { href: '#evaluation-plan', label: '评价框架', icon: ShieldCheck },
   { href: '#route-plan', label: '路线规划', icon: Route },

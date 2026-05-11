@@ -406,6 +406,133 @@
   color: var(--color-muted);
 }
 
+.map-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: end;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.map-toolbar label {
+  display: grid;
+  gap: 6px;
+  min-width: 180px;
+}
+
+.map-toolbar span {
+  color: var(--color-heading);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.map-toolbar select {
+  min-height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0 38px 0 12px;
+  color: var(--color-heading);
+  background: #fff;
+}
+
+.map-toolbar p {
+  margin: 0 0 9px auto;
+  color: var(--color-muted);
+}
+
+.map-toolbar strong {
+  color: var(--color-red);
+}
+
+.resource-map {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #efe6da;
+  box-shadow: var(--shadow-soft);
+}
+
+.resource-map .leaflet-container {
+  width: 100%;
+  min-height: 480px;
+  font: inherit;
+}
+
+.red-tourism-marker {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(155, 36, 36, 0.18);
+}
+
+.red-tourism-marker span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  background: var(--color-red);
+  box-shadow: 0 4px 12px rgba(85, 28, 22, 0.36);
+}
+
+.map-popup {
+  display: grid;
+  gap: 8px;
+  min-width: 220px;
+  color: var(--color-text);
+}
+
+.map-popup strong {
+  color: var(--color-heading);
+  font-size: 16px;
+}
+
+.map-popup span,
+.map-popup small {
+  color: var(--color-muted);
+}
+
+.map-popup dl {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.map-popup dl div {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.map-popup dt {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.map-popup dd {
+  margin: 0;
+}
+
+.map-empty {
+  position: absolute;
+  inset: auto 16px 16px 16px;
+  z-index: 500;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--color-heading);
+  background: rgba(255, 255, 255, 0.94);
+  text-align: center;
+}
+
 .site-footer {
   width: min(1180px, calc(100% - 40px));
   margin: 28px auto 0;
@@ -467,5 +594,23 @@
 
   .method-list {
     grid-template-columns: 1fr;
+  }
+
+  .map-toolbar {
+    align-items: stretch;
+  }
+
+  .map-toolbar label,
+  .map-toolbar p {
+    width: 100%;
+  }
+
+  .map-toolbar p {
+    margin: 0;
+  }
+
+  .resource-map,
+  .resource-map .leaflet-container {
+    min-height: 360px;
   }
 }
