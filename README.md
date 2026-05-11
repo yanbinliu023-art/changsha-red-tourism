@@ -45,6 +45,21 @@ npm run dev
 npm run build
 ```
 
+## GitHub Pages 部署
+
+项目已配置 GitHub Actions。推送到 `main` 分支后，工作流会自动执行：
+
+```bash
+npm ci
+npm run build
+```
+
+随后将 `dist` 目录部署到 GitHub Pages。
+
+访问地址：
+
+https://yanbinliu023-art.github.io/changsha-red-tourism/
+
 ## 后续可完善方向
 
 - 将演示数据替换为实地调研记录和真实问卷统计结果。
