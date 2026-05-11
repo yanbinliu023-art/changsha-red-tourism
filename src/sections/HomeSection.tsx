@@ -1,19 +1,13 @@
-import {
-  BookOpenCheck,
-  GraduationCap,
-  Landmark,
-  MapPinned,
-  Route,
-} from 'lucide-react'
+import { BookOpenCheck, GraduationCap, Landmark, MapPinned } from 'lucide-react'
 import DataNotice from '../components/DataNotice'
 import SectionTitle from '../components/SectionTitle'
 import SiteCard from '../components/SiteCard'
 import StatCard from '../components/StatCard'
-import { routePlans } from '../data/routes'
 import { redTourismSites } from '../data/sites'
 import { surveyMetrics } from '../data/survey'
 import EvaluationSection from './EvaluationSection'
 import MapSection from './MapSection'
+import RoutesSection from './RoutesSection'
 import SurveySection from './SurveySection'
 
 function HomeSection() {
@@ -131,18 +125,7 @@ function HomeSection() {
 
       <SurveySection />
 
-      <section className="content-section" id="route-plan">
-        <SectionTitle
-          eyebrow="路线规划"
-          title="红色研学路线数据已建立"
-          description="本阶段先完成路线数据结构，后续可扩展为路线推荐卡片与地图联动。"
-        />
-        <div className="route-preview">
-          <Route aria-hidden="true" size={22} />
-          <strong>{routePlans.length} 条演示路线</strong>
-          <span>覆盖市区半日线与周边一日线</span>
-        </div>
-      </section>
+      <RoutesSection />
     </>
   )
 }

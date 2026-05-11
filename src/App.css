@@ -805,6 +805,157 @@
   font-weight: 700;
 }
 
+.route-intro,
+.route-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.route-intro {
+  margin-bottom: 16px;
+  padding: 20px;
+}
+
+.route-intro h3 {
+  margin: 0 0 8px;
+  color: var(--color-heading);
+}
+
+.route-intro p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.route-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 20px;
+}
+
+.route-card__header h3 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.route-meta {
+  display: grid;
+  gap: 8px;
+}
+
+.route-meta span {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--color-text);
+}
+
+.route-meta svg {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  color: var(--color-red);
+}
+
+.route-block h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  color: var(--color-heading);
+}
+
+.route-stops {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: route-stop;
+}
+
+.route-stops li {
+  position: relative;
+  min-height: 34px;
+  padding-left: 42px;
+  color: var(--color-text);
+  counter-increment: route-stop;
+}
+
+.route-stops li::before {
+  content: counter(route-stop);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--color-red);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.route-stops li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 30px;
+  bottom: -8px;
+  width: 2px;
+  background: #eaded0;
+}
+
+.route-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.route-tags span {
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--color-red);
+  background: var(--color-red-soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.route-suggestions {
+  border-radius: 8px;
+  padding: 14px;
+  background: #fff8e8;
+}
+
+.route-suggestions h4 svg {
+  color: var(--color-red);
+}
+
+.route-suggestions ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--color-text);
+}
+
+.route-card small {
+  margin-top: auto;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
 .site-footer {
   width: min(1180px, calc(100% - 40px));
   margin: 28px auto 0;
@@ -837,6 +988,7 @@
   .evaluation-charts,
   .survey-overview,
   .survey-layout,
+  .route-grid,
   .split-section {
     grid-template-columns: 1fr;
   }

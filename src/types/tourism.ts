@@ -68,5 +68,6 @@ export interface RoutePlan {
   theme: string
   stops: string[]
   highlights: string[]
+  suggestions: string[]
   dataSource: typeof DATA_SOURCE_NOTE
 }
