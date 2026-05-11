@@ -90,7 +90,7 @@ declare module 'leaflet' {
   export class Path extends Layer {}
   export class Map extends Evented {}
   export class TileLayer extends Layer {}
-  export class Marker<T = unknown> extends Layer {}
+  export class Marker extends Layer {}
   export class Popup extends Layer {}
   export class Tooltip extends Layer {}
   export class Circle extends Path {}

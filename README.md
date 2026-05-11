@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# 长沙市及周边红色旅游资源保护开发现状调研网站
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个面向“毛泽东思想与中国特色社会主义理论体系概论”课程实践调研的前端网站原型，用于展示长沙市及周边红色旅游资源保护开发现状的研究框架、演示数据和可视化成果。
 
-Currently, two official plugins are available:
+## 项目背景
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+长沙及周边红色旅游资源具有重要的历史教育价值和现实育人意义。本项目围绕红色资源保护、开发利用、游客满意度、青年教育价值和研学路线优化展开，用网站形式组织课程实践材料，服务课堂汇报、调研展示和后续报告写作。
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Vite
+- React
+- TypeScript
+- Leaflet / React Leaflet
+- lucide-react
+- HTML + CSS 可视化组件
+- 静态本地演示数据
 
-## Expanding the ESLint configuration
+## 功能模块
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 首页：展示研究主题、调研背景、调研目标和核心概览数据。
+- 资源地图：使用 Leaflet 展示长沙及周边红色旅游资源点位，并支持类型和地区筛选。
+- 资源预览：以卡片方式展示代表性红色资源的保护现状、开发情况和教育价值。
+- 保护开发评价：使用 CSS 条形图展示资源保护开发评价，不依赖图表库渲染。
+- 满意度调研：展示满意度指标、游客偏好、主要问题标签和课程实践问卷题目。
+- 路线规划：设计 3 条红色研学路线，并给出资源联动、数字导览、交通接驳、青年传播等建议。
+- 关于调研：整理调研主题、背景意义、方法、指标体系、数据说明、实践成果和报告提纲。
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 数据说明
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+当前网站数据为课程项目演示数据，非真实问卷统计结果。后续可用实地走访记录、问卷星或腾讯问卷统计结果替换。
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+项目不会虚构真实问卷结论；所有评分、满意度、路线建议和问题标签均用于课程网站原型展示。
+
+## 本地运行
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 构建方式
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## 后续可完善方向
+
+- 将演示数据替换为实地调研记录和真实问卷统计结果。
+- 增加资源详情页，补充照片、访谈记录和保护开发观察表。
+- 扩展地图图层，加入路线连线、交通接驳说明和点位筛选统计。
+- 完善满意度分析，按游客类型、年龄段或参观频率进行交叉分析。
+- 增加实践报告导出或报告页面，便于课程汇报和成果提交。
