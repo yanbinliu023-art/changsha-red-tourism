@@ -5,6 +5,7 @@ import SiteCard from '../components/SiteCard'
 import StatCard from '../components/StatCard'
 import { redTourismSites } from '../data/sites'
 import { surveyMetrics } from '../data/survey'
+import AboutSection from './AboutSection'
 import EvaluationSection from './EvaluationSection'
 import MapSection from './MapSection'
 import RoutesSection from './RoutesSection'
@@ -126,6 +127,8 @@ function HomeSection() {
       <SurveySection />
 
       <RoutesSection />
+
+      <AboutSection />
     </>
   )
 }

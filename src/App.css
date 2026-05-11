@@ -956,6 +956,119 @@
   font-size: 12px;
 }
 
+.about-grid,
+.about-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-card,
+.about-block {
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+}
+
+.about-card,
+.about-block {
+  padding: 20px;
+}
+
+.about-grid,
+.about-block,
+.about-card--notice,
+.about-two-column {
+  margin-bottom: 16px;
+}
+
+.about-card h3,
+.about-block h3 {
+  margin: 0 0 10px;
+  color: var(--color-heading);
+}
+
+.about-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-red);
+  font-size: 18px;
+}
+
+.about-card p,
+.about-block p {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.about-card--notice {
+  background: #fff8e8;
+  border-color: #ead7a6;
+}
+
+.method-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.method-card-grid span {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--color-heading);
+  background: #fffaf2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.indicator-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.indicator-grid article {
+  min-width: 0;
+  border-radius: 8px;
+  padding: 14px;
+  background: var(--color-red-soft);
+}
+
+.indicator-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-red);
+}
+
+.indicator-grid p {
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.about-list,
+.report-outline {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.about-list {
+  padding-left: 20px;
+}
+
+.report-outline {
+  padding-left: 24px;
+}
+
+.about-list li::marker,
+.report-outline li::marker {
+  color: var(--color-red);
+  font-weight: 800;
+}
+
 .site-footer {
   width: min(1180px, calc(100% - 40px));
   margin: 28px auto 0;
@@ -989,6 +1102,10 @@
   .survey-overview,
   .survey-layout,
   .route-grid,
+  .about-grid,
+  .about-two-column,
+  .method-card-grid,
+  .indicator-grid,
   .split-section {
     grid-template-columns: 1fr;
   }

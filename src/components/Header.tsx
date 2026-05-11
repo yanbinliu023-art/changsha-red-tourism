@@ -1,4 +1,11 @@
-import { BookOpen, ClipboardList, MapPin, Route, ShieldCheck } from 'lucide-react'
+import {
+  BookOpen,
+  ClipboardList,
+  FileText,
+  MapPin,
+  Route,
+  ShieldCheck,
+} from 'lucide-react'
 
 const navItems = [
   { href: '#home', label: '首页', icon: BookOpen },
@@ -7,6 +14,7 @@ const navItems = [
   { href: '#evaluation-section', label: '评价图表', icon: ShieldCheck },
   { href: '#survey-section', label: '满意度调研', icon: ClipboardList },
   { href: '#route-plan', label: '路线规划', icon: Route },
+  { href: '#about-research', label: '关于调研', icon: FileText },
 ]
 
 function Header() {
