@@ -14,6 +14,7 @@ import { redTourismSites } from '../data/sites'
 import { surveyMetrics } from '../data/survey'
 import EvaluationSection from './EvaluationSection'
 import MapSection from './MapSection'
+import SurveySection from './SurveySection'
 
 function HomeSection() {
   const previewSites = redTourismSites.slice(0, 3)
@@ -127,6 +128,8 @@ function HomeSection() {
       </section>
 
       <EvaluationSection />
+
+      <SurveySection />
 
       <section className="content-section" id="route-plan">
         <SectionTitle

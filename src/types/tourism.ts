@@ -35,6 +35,19 @@ export interface SurveyMetric {
   dataSource: typeof DATA_SOURCE_NOTE
 }
 
+export interface SatisfactionSurveyData {
+  overallSatisfaction: number
+  explanationService: number
+  facilityExperience: number
+  trafficConvenience: number
+  culturalAttraction: number
+  recommendWillingness: number
+  preferredFormats: string[]
+  issueTags: string[]
+  questionnaire: string[]
+  dataSource: typeof DATA_SOURCE_NOTE
+}
+
 export interface EvaluationMetric {
   siteId: string
   siteName: string
