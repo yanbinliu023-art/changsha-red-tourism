@@ -32,7 +32,7 @@ function EvaluationCharts({ evaluations }: EvaluationChartsProps) {
         <div className="chart-card__header">
           <div>
             <h3>各资源点综合评分</h3>
-            <p>展示各资源点五项保护开发指标的演示平均分。</p>
+            <p>展示各资源点五项保护开发指标的综合平均分。</p>
           </div>
         </div>
         <div className="score-list" aria-label="各资源点综合评分条形图">

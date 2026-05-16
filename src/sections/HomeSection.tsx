@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { BookOpenCheck, GraduationCap, Landmark, MapPinned } from 'lucide-react'
 import SectionTitle from '../components/SectionTitle'
 import SiteCard from '../components/SiteCard'
@@ -10,6 +11,7 @@ import RoutesSection from './RoutesSection'
 import SurveySection from './SurveySection'
 
 function HomeSection() {
+  const [selectedSiteId, setSelectedSiteId] = useState(redTourismSites[0]?.id ?? '')
   const resourceTypeCount = new Set(redTourismSites.map((site) => site.type)).size
   const resourceTypeSummary = Array.from(
     new Set(redTourismSites.map((site) => site.type)),
@@ -21,6 +23,8 @@ function HomeSection() {
   const overallSatisfaction = surveyMetrics.find(
     (metric) => metric.id === 'overall-satisfaction',
   )
+  const selectedSite =
+    redTourismSites.find((site) => site.id === selectedSiteId) ?? redTourismSites[0]
 
   return (
     <>
@@ -77,7 +81,7 @@ function HomeSection() {
         <SectionTitle
           eyebrow="核心数据"
           title="首页概览指标"
-          description="以下指标均用于课程项目演示，帮助说明网站的信息组织方式。"
+          description="以下指标根据当前资源库与满意度模块自动汇总。"
         />
         <div className="stat-grid">
           <StatCard
@@ -96,13 +100,13 @@ function HomeSection() {
             icon={GraduationCap}
             label="平均教育价值"
             value={`${averageEducationValue} 分`}
-            note="基于演示评价字段计算"
+            note="基于资源教育价值字段计算"
           />
           <StatCard
             icon={BookOpenCheck}
             label="综合满意度"
             value={`${overallSatisfaction?.value ?? 0} 分`}
-            note="来自演示问卷指标"
+            note="来自满意度调研指标"
           />
         </div>
       </section>
@@ -113,13 +117,50 @@ function HomeSection() {
         <SectionTitle
           eyebrow="资源卡片预览"
           title="代表性红色旅游资源"
-          description="先展示资源卡片信息结构，后续阶段可接入地图筛选和详情页面。"
+          description="横向浏览全部资源卡片，点击卡片查看资源详情。"
         />
-        <div className="site-grid">
+        <div className="site-grid" aria-label="红色旅游资源卡片横向列表">
           {redTourismSites.map((site) => (
-            <SiteCard key={site.id} site={site} />
+            <SiteCard
+              isSelected={selectedSite?.id === site.id}
+              key={site.id}
+              site={site}
+              onSelect={(nextSite) => setSelectedSiteId(nextSite.id)}
+            />
           ))}
         </div>
+        {selectedSite ? (
+          <article className="site-detail-panel" aria-label="当前选中资源详情">
+            <div className="map-detail-panel__header">
+              <p className="eyebrow">{selectedSite.type}</p>
+              <h3>{selectedSite.name}</h3>
+              <span>{selectedSite.district}</span>
+            </div>
+            <dl className="map-detail-list">
+              <div>
+                <dt>主题</dt>
+                <dd>{selectedSite.theme}</dd>
+              </div>
+              <div>
+                <dt>保护状态</dt>
+                <dd>{selectedSite.protectionStatus}</dd>
+              </div>
+              <div>
+                <dt>开发现状</dt>
+                <dd>{selectedSite.developmentStatus}</dd>
+              </div>
+              <div>
+                <dt>参观提示</dt>
+                <dd>{selectedSite.visitTips}</dd>
+              </div>
+            </dl>
+            <div className="tag-list" aria-label="资源标签">
+              {selectedSite.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </article>
+        ) : null}
       </section>
 
       <EvaluationSection />

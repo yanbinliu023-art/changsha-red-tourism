@@ -40,7 +40,6 @@ export interface SatisfactionSurveyData {
   recommendWillingness: number
   preferredFormats: string[]
   issueTags: string[]
-  questionnaire: string[]
 }
 
 export interface EvaluationMetric {

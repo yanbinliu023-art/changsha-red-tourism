@@ -1,5 +1,3 @@
-import { useMemo, useState } from 'react'
-import { ClipboardCopy } from 'lucide-react'
 import SectionTitle from '../components/SectionTitle'
 import { satisfactionSurvey } from '../data/survey'
 
@@ -13,27 +11,12 @@ const satisfactionMetrics = [
 ] as const
 
 function SurveySection() {
-  const [copyMessage, setCopyMessage] = useState('')
-
-  const questionnaireText = useMemo(
-    () =>
-      satisfactionSurvey.questionnaire
-        .map((question, index) => `${index + 1}. ${question}`)
-        .join('\n'),
-    [],
-  )
-
-  const handleCopy = async () => {
-    await navigator.clipboard.writeText(questionnaireText)
-    setCopyMessage('已复制，可粘贴到问卷星或腾讯问卷')
-  }
-
   return (
     <section className="content-section" id="survey-section">
       <SectionTitle
         eyebrow="满意度调研"
         title="游客满意度与青年体验调研"
-        description="围绕游客体验、青年吸引力和传播方式设计演示问卷，为后续真实调研替换数据预留结构。"
+        description="围绕游客体验、青年吸引力和传播方式整理满意度指标，为保护开发建议提供参考。"
       />
       <div className="survey-overview">
         <article>
@@ -95,26 +78,6 @@ function SurveySection() {
           </article>
         </div>
       </div>
-
-      <article className="survey-card questionnaire-card">
-        <div className="questionnaire-header">
-          <div>
-            <h3>问卷题目展示区</h3>
-            <p>以下题目适合大学生课程实践调研，后续可直接导入问卷平台。</p>
-          </div>
-          <button type="button" onClick={handleCopy}>
-            <ClipboardCopy aria-hidden="true" size={18} />
-            复制问卷题目
-          </button>
-        </div>
-        <ol className="question-list">
-          {satisfactionSurvey.questionnaire.map((question) => (
-            <li key={question}>{question}</li>
-          ))}
-        </ol>
-        {copyMessage ? <p className="copy-message">{copyMessage}</p> : null}
-      </article>
-
     </section>
   )
 }

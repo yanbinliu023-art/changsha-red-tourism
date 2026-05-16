@@ -37,7 +37,7 @@ function MapSection() {
       <SectionTitle
         eyebrow="资源地图"
         title="长沙市及周边红色旅游资源点位"
-        description="通过地图查看演示资源样本的空间分布，并按资源类型和所在地区进行筛选。"
+        description="通过本地示意地图查看资源样本的空间分布，并按资源类型和所在地区进行筛选。"
       />
       <div className="map-toolbar" aria-label="地图筛选">
         <label>

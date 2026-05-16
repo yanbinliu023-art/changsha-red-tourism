@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import type { RedTourismSite } from '../types/tourism'
 
 interface ResourceMapProps {
@@ -47,10 +47,6 @@ function ResourceMap({ sites }: ResourceMapProps) {
   const positionedSites = useMemo(() => getPositionedSites(sites), [sites])
   const selectedSite =
     sites.find((site) => site.id === selectedSiteId) ?? sites[0] ?? null
-
-  useEffect(() => {
-    setSelectedSiteId(sites[0]?.id ?? '')
-  }, [sites])
 
   return (
     <div className="resource-map" aria-label="长沙市及周边红色资源分布示意图">

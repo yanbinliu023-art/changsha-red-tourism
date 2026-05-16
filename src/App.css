@@ -192,8 +192,7 @@
 }
 
 .text-grid,
-.stat-grid,
-.site-grid {
+.stat-grid {
   display: grid;
   gap: 16px;
 }
@@ -264,14 +263,44 @@
 }
 
 .site-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 2px 4px 14px;
+  scroll-snap-type: x proximity;
+  scrollbar-color: rgba(155, 36, 36, 0.42) rgba(242, 232, 220, 0.9);
 }
 
 .site-card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 330px;
   gap: 12px;
+  min-width: 0;
   padding: 20px;
+  scroll-snap-align: start;
+}
+
+.site-card[role='button'] {
+  cursor: pointer;
+}
+
+.site-card[role='button']:hover,
+.site-card[role='button']:focus-visible,
+.site-card--active {
+  border-color: rgba(155, 36, 36, 0.35);
+  background: #fffaf2;
+  box-shadow: 0 12px 28px rgba(95, 35, 24, 0.1);
+  outline: none;
+}
+
+.site-detail-panel {
+  margin-top: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
 }
 
 .site-card__topline,
@@ -827,60 +856,6 @@
   border: 1px solid #ead7a6;
 }
 
-.questionnaire-card {
-  margin-top: 16px;
-}
-
-.questionnaire-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.questionnaire-header button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 42px;
-  border: none;
-  border-radius: 8px;
-  padding: 0 16px;
-  color: #fff;
-  background: var(--color-red);
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.questionnaire-header button:hover {
-  background: #7f1d1d;
-}
-
-.question-list {
-  display: grid;
-  gap: 10px;
-  margin: 0;
-  padding-left: 22px;
-  color: var(--color-text);
-}
-
-.question-list li::marker {
-  color: var(--color-red);
-  font-weight: 700;
-}
-
-.copy-message {
-  margin-top: 14px;
-  border: 1px solid #c7e6d5;
-  border-radius: 8px;
-  padding: 10px 12px;
-  color: #1c6b4a;
-  background: #e7f7ef;
-  font-weight: 700;
-}
-
 .route-intro,
 .route-card {
   border: 1px solid var(--color-border);
@@ -1084,7 +1059,6 @@
 
   .text-grid,
   .stat-grid,
-  .site-grid,
   .evaluation-charts,
   .survey-overview,
   .survey-layout,
@@ -1173,14 +1147,9 @@
   }
 
   .score-row__label,
-  .metric-panel,
-  .questionnaire-header {
+  .metric-panel {
     align-items: flex-start;
     flex-direction: column;
     gap: 4px;
-  }
-
-  .questionnaire-header button {
-    width: 100%;
   }
 }
