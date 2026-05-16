@@ -1,44 +1,41 @@
-import type { EvaluationMetric } from '../types/tourism'
+import { redTourismSites } from './sites'
+import type { EvaluationMetric, ProtectionStatus } from '../types/tourism'
 
-export const evaluations: EvaluationMetric[] = [
-  {
-    siteId: 'cs-martyrs-park',
-    siteName: '湖南烈士公园',
-    protectionIntegrity: 88,
-    exhibitionEducation: 84,
-    visitorExperience: 86,
-    transportationConvenience: 92,
-    youthAppeal: 80,
-    averageScore: 86,
-  },
-  {
-    siteId: 'first-normal-school',
-    siteName: '湖南第一师范学院旧址',
-    protectionIntegrity: 91,
-    exhibitionEducation: 93,
-    visitorExperience: 85,
-    transportationConvenience: 88,
-    youthAppeal: 91,
-    averageScore: 90,
-  },
-  {
-    siteId: 'yang-kaihui-memorial',
-    siteName: '杨开慧纪念馆',
-    protectionIntegrity: 90,
-    exhibitionEducation: 88,
-    visitorExperience: 84,
-    transportationConvenience: 76,
-    youthAppeal: 86,
-    averageScore: 85,
-  },
-  {
-    siteId: 'liu-shaoqi-hometown',
-    siteName: '刘少奇故里',
-    protectionIntegrity: 93,
-    exhibitionEducation: 90,
-    visitorExperience: 88,
-    transportationConvenience: 78,
-    youthAppeal: 87,
-    averageScore: 87,
-  },
-]
+const protectionScoreMap: Record<ProtectionStatus, number> = {
+  较好: 90,
+  一般: 78,
+  待提升: 68,
+}
+
+const clampScore = (score: number) => Math.max(60, Math.min(98, score))
+
+export const evaluations: EvaluationMetric[] = redTourismSites.map((site, index) => {
+  const protectionIntegrity = clampScore(
+    protectionScoreMap[site.protectionStatus] + (index % 5) - 2,
+  )
+  const exhibitionEducation = clampScore(site.educationValue - 2 + (index % 4))
+  const visitorExperience = clampScore(82 + (index % 6) + Math.round((site.educationValue - 88) / 2))
+  const transportationConvenience = clampScore(
+    site.district.startsWith('长沙市') ? 90 - (index % 4) : 78 + (index % 5),
+  )
+  const youthAppeal = clampScore(site.educationValue - 5 + (index % 7))
+  const averageScore = Math.round(
+    (protectionIntegrity +
+      exhibitionEducation +
+      visitorExperience +
+      transportationConvenience +
+      youthAppeal) /
+      5,
+  )
+
+  return {
+    siteId: site.id,
+    siteName: site.name,
+    protectionIntegrity,
+    exhibitionEducation,
+    visitorExperience,
+    transportationConvenience,
+    youthAppeal,
+    averageScore,
+  }
+})

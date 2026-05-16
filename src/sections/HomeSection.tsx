@@ -10,7 +10,10 @@ import RoutesSection from './RoutesSection'
 import SurveySection from './SurveySection'
 
 function HomeSection() {
-  const previewSites = redTourismSites.slice(0, 3)
+  const resourceTypeCount = new Set(redTourismSites.map((site) => site.type)).size
+  const resourceTypeSummary = Array.from(
+    new Set(redTourismSites.map((site) => site.type)),
+  ).join('、')
   const averageEducationValue = Math.round(
     redTourismSites.reduce((sum, site) => sum + site.educationValue, 0) /
       redTourismSites.length,
@@ -86,8 +89,8 @@ function HomeSection() {
           <StatCard
             icon={MapPinned}
             label="资源类型"
-            value="5 类"
-            note="纪念馆、旧址、陵园、故居、研学基地"
+            value={`${resourceTypeCount} 类`}
+            note={resourceTypeSummary}
           />
           <StatCard
             icon={GraduationCap}
@@ -113,7 +116,7 @@ function HomeSection() {
           description="先展示资源卡片信息结构，后续阶段可接入地图筛选和详情页面。"
         />
         <div className="site-grid">
-          {previewSites.map((site) => (
+          {redTourismSites.map((site) => (
             <SiteCard key={site.id} site={site} />
           ))}
         </div>
