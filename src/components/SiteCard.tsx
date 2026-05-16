@@ -39,7 +39,6 @@ function SiteCard({ site }: SiteCardProps) {
           <span key={tag}>{tag}</span>
         ))}
       </div>
-      <small>{site.dataSource}</small>
     </article>
   )
 }

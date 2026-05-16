@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { ClipboardCopy } from 'lucide-react'
-import DataNotice from '../components/DataNotice'
 import SectionTitle from '../components/SectionTitle'
 import { satisfactionSurvey } from '../data/survey'
 
@@ -116,7 +115,6 @@ function SurveySection() {
         {copyMessage ? <p className="copy-message">{copyMessage}</p> : null}
       </article>
 
-      <DataNotice detail={satisfactionSurvey.dataSource} />
     </section>
   )
 }

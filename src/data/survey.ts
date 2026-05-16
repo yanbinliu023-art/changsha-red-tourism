@@ -1,8 +1,4 @@
-import {
-  DATA_SOURCE_NOTE,
-  type SatisfactionSurveyData,
-  type SurveyMetric,
-} from '../types/tourism'
+import type { SatisfactionSurveyData, SurveyMetric } from '../types/tourism'
 
 export const satisfactionSurvey: SatisfactionSurveyData = {
   overallSatisfaction: 86,
@@ -41,7 +37,6 @@ export const satisfactionSurvey: SatisfactionSurveyData = {
     '你希望景区增加哪些数字化服务？',
     '你对红色旅游资源保护开发有什么建议？',
   ],
-  dataSource: DATA_SOURCE_NOTE,
 }
 
 export const surveyMetrics: SurveyMetric[] = [
@@ -51,7 +46,6 @@ export const surveyMetrics: SurveyMetric[] = [
     value: satisfactionSurvey.overallSatisfaction,
     unit: '分',
     description: '用于演示游客对红色旅游体验的整体评价。',
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     id: 'explanation-service',
@@ -59,7 +53,6 @@ export const surveyMetrics: SurveyMetric[] = [
     value: satisfactionSurvey.explanationService,
     unit: '分',
     description: '用于演示游客对讲解服务内容和形式的评价。',
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     id: 'cultural-attraction',
@@ -67,6 +60,5 @@ export const surveyMetrics: SurveyMetric[] = [
     value: satisfactionSurvey.culturalAttraction,
     unit: '分',
     description: '用于演示红色旅游内容对青年群体的吸引力。',
-    dataSource: DATA_SOURCE_NOTE,
   },
 ]

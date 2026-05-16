@@ -1,5 +1,3 @@
-export const DATA_SOURCE_NOTE = '课程项目演示数据，非真实问卷统计结果'
-
 export type SiteType =
   | '纪念馆'
   | '革命旧址'
@@ -23,7 +21,6 @@ export interface RedTourismSite {
   educationValue: number
   visitTips: string
   tags: string[]
-  dataSource: typeof DATA_SOURCE_NOTE
 }
 
 export interface SurveyMetric {
@@ -32,7 +29,6 @@ export interface SurveyMetric {
   value: number
   unit: string
   description: string
-  dataSource: typeof DATA_SOURCE_NOTE
 }
 
 export interface SatisfactionSurveyData {
@@ -45,7 +41,6 @@ export interface SatisfactionSurveyData {
   preferredFormats: string[]
   issueTags: string[]
   questionnaire: string[]
-  dataSource: typeof DATA_SOURCE_NOTE
 }
 
 export interface EvaluationMetric {
@@ -57,7 +52,6 @@ export interface EvaluationMetric {
   transportationConvenience: number
   youthAppeal: number
   averageScore: number
-  dataSource: typeof DATA_SOURCE_NOTE
 }
 
 export interface RoutePlan {
@@ -69,5 +63,4 @@ export interface RoutePlan {
   stops: string[]
   highlights: string[]
   suggestions: string[]
-  dataSource: typeof DATA_SOURCE_NOTE
 }

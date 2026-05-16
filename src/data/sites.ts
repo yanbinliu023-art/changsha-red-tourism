@@ -1,4 +1,4 @@
-import { DATA_SOURCE_NOTE, type RedTourismSite } from '../types/tourism'
+import type { RedTourismSite } from '../types/tourism'
 
 export const redTourismSites: RedTourismSite[] = [
   {
@@ -15,7 +15,6 @@ export const redTourismSites: RedTourismSite[] = [
     educationValue: 92,
     visitTips: '适合作为市区红色研学路线的起点，建议结合纪念设施讲解。',
     tags: ['市区可达', '纪念教育', '公共空间'],
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     id: 'first-normal-school',
@@ -31,7 +30,6 @@ export const redTourismSites: RedTourismSite[] = [
     educationValue: 95,
     visitTips: '适合与橘子洲、岳麓山片区组成青年研学线路。',
     tags: ['革命旧址', '研学课程', '青年教育'],
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     id: 'yang-kaihui-memorial',
@@ -47,7 +45,6 @@ export const redTourismSites: RedTourismSite[] = [
     educationValue: 90,
     visitTips: '适合安排为周边拓展研学线路，注意交通接驳规划。',
     tags: ['名人纪念', '乡村文旅', '信仰教育'],
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     id: 'liu-shaoqi-hometown',
@@ -63,6 +60,5 @@ export const redTourismSites: RedTourismSite[] = [
     educationValue: 94,
     visitTips: '适合一日研学路线，建议提前设计学习任务单。',
     tags: ['名人故居', '廉洁教育', '一日研学'],
-    dataSource: DATA_SOURCE_NOTE,
   },
 ]

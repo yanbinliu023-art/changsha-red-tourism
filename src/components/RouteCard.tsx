@@ -57,8 +57,6 @@ function RouteCard({ route }: RouteCardProps) {
           ))}
         </ul>
       </div>
-
-      <small>{route.dataSource}</small>
     </article>
   )
 }

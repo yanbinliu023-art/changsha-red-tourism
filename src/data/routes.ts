@@ -1,4 +1,4 @@
-import { DATA_SOURCE_NOTE, type RoutePlan } from '../types/tourism'
+import type { RoutePlan } from '../types/tourism'
 
 export const routePlans: RoutePlan[] = [
   {
@@ -14,7 +14,6 @@ export const routePlans: RoutePlan[] = [
       '开发面向大学生的任务卡、打卡地图和短视频讲解内容。',
       '组织高校志愿讲解队伍，提升青年参与和传播效果。',
     ],
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     id: 'changsha-county-wangcheng-spirit',
@@ -29,7 +28,6 @@ export const routePlans: RoutePlan[] = [
       '增加数字导览、音频讲解和线上学习资料，提升自主研学效率。',
       '完善团队交通接驳说明，降低跨区研学组织成本。',
     ],
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     id: 'ningxiang-shaoshan-extension',
@@ -44,6 +42,5 @@ export const routePlans: RoutePlan[] = [
       '围绕文创开发和青年传播方式设置调研任务，提升课程实践深度。',
       '完善预约、讲解、交通和餐饮信息整合，提升团队参观体验。',
     ],
-    dataSource: DATA_SOURCE_NOTE,
   },
 ]

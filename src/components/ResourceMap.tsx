@@ -49,7 +49,6 @@ function ResourceMap({ sites }: ResourceMapProps) {
                     <dd>{site.developmentStatus}</dd>
                   </div>
                 </dl>
-                <small>{site.dataSource}</small>
               </div>
             </Popup>
           </Marker>

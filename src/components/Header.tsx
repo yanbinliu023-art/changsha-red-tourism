@@ -1,7 +1,6 @@
 import {
   BookOpen,
   ClipboardList,
-  FileText,
   MapPin,
   Route,
   ShieldCheck,
@@ -14,14 +13,12 @@ const navItems = [
   { href: '#evaluation-section', label: '评价图表', icon: ShieldCheck },
   { href: '#survey-section', label: '满意度调研', icon: ClipboardList },
   { href: '#route-plan', label: '路线规划', icon: Route },
-  { href: '#about-research', label: '关于调研', icon: FileText },
 ]
 
 function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#home" aria-label="返回首页">
-        <span className="brand-mark">长</span>
         <span>
           <strong>长沙红色旅游调研</strong>
           <small>课程实践研究网站</small>

@@ -1,11 +1,9 @@
 import { BookOpenCheck, GraduationCap, Landmark, MapPinned } from 'lucide-react'
-import DataNotice from '../components/DataNotice'
 import SectionTitle from '../components/SectionTitle'
 import SiteCard from '../components/SiteCard'
 import StatCard from '../components/StatCard'
 import { redTourismSites } from '../data/sites'
 import { surveyMetrics } from '../data/survey'
-import AboutSection from './AboutSection'
 import EvaluationSection from './EvaluationSection'
 import MapSection from './MapSection'
 import RoutesSection from './RoutesSection'
@@ -26,7 +24,7 @@ function HomeSection() {
       <section className="hero-section" id="home">
         <div className="hero-section__content">
           <p className="eyebrow">高校课程实践 · 静态研究展示</p>
-          <h1>长沙市及周边红色旅游资源保护开发现状调研网站</h1>
+          <h1>长沙市及周边红色旅游资源</h1>
           <p className="hero-section__lead">
             围绕红色旅游资源的保护现状、开发利用、游客满意度和教育价值，
             建立一个面向课程汇报的可视化研究网站。
@@ -104,7 +102,6 @@ function HomeSection() {
             note="来自演示问卷指标"
           />
         </div>
-        <DataNotice detail="首页、资源卡片、路线与满意度指标目前全部为静态演示内容，后续可替换为真实问卷和实地调研结果。" />
       </section>
 
       <MapSection />
@@ -127,8 +124,6 @@ function HomeSection() {
       <SurveySection />
 
       <RoutesSection />
-
-      <AboutSection />
     </>
   )
 }

@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react'
-import DataNotice from '../components/DataNotice'
 import ResourceMap from '../components/ResourceMap'
 import SectionTitle from '../components/SectionTitle'
 import { redTourismSites } from '../data/sites'
@@ -74,7 +73,6 @@ function MapSection() {
         </p>
       </div>
       <ResourceMap sites={filteredSites} />
-      <DataNotice detail="地图点位和筛选结果来自本项目静态演示数据，仅用于课程实践网站的信息展示结构验证。" />
     </section>
   )
 }

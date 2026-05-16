@@ -1,4 +1,3 @@
-import DataNotice from '../components/DataNotice'
 import RouteCard from '../components/RouteCard'
 import SectionTitle from '../components/SectionTitle'
 import { routePlans } from '../data/routes'
@@ -23,7 +22,6 @@ function RoutesSection() {
           <RouteCard key={route.id} route={route} />
         ))}
       </div>
-      <DataNotice detail="路线内容为课程项目演示方案，后续可根据实地调研、交通条件和景区开放信息继续修订。" />
     </section>
   )
 }

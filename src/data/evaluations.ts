@@ -1,4 +1,4 @@
-import { DATA_SOURCE_NOTE, type EvaluationMetric } from '../types/tourism'
+import type { EvaluationMetric } from '../types/tourism'
 
 export const evaluations: EvaluationMetric[] = [
   {
@@ -10,7 +10,6 @@ export const evaluations: EvaluationMetric[] = [
     transportationConvenience: 92,
     youthAppeal: 80,
     averageScore: 86,
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     siteId: 'first-normal-school',
@@ -21,7 +20,6 @@ export const evaluations: EvaluationMetric[] = [
     transportationConvenience: 88,
     youthAppeal: 91,
     averageScore: 90,
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     siteId: 'yang-kaihui-memorial',
@@ -32,7 +30,6 @@ export const evaluations: EvaluationMetric[] = [
     transportationConvenience: 76,
     youthAppeal: 86,
     averageScore: 85,
-    dataSource: DATA_SOURCE_NOTE,
   },
   {
     siteId: 'liu-shaoqi-hometown',
@@ -43,6 +40,5 @@ export const evaluations: EvaluationMetric[] = [
     transportationConvenience: 78,
     youthAppeal: 87,
     averageScore: 87,
-    dataSource: DATA_SOURCE_NOTE,
   },
 ]
